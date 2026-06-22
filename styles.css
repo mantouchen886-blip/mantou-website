@@ -449,6 +449,26 @@ h2 {
   line-height: 1.04;
 }
 
+.training-heading small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.training-photo {
+  margin: 0 0 clamp(28px, 5vw, 54px);
+}
+
+.training-photo img {
+  width: 100%;
+  max-height: 560px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  box-shadow: 0 22px 70px rgba(31, 33, 29, 0.12);
+}
+
 .training-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -478,13 +498,6 @@ h2 {
   border-right: 0;
 }
 
-.training-list span {
-  color: var(--rose);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-
 .training-list strong {
   display: block;
   font-size: clamp(22px, 2.35vw, 34px);
@@ -497,6 +510,86 @@ h2 {
   font-size: 14px;
   font-weight: 800;
   line-height: 1.45;
+}
+
+.training-schedule-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.training-schedule-nav a {
+  min-height: 210px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: clamp(24px, 3vw, 38px);
+  border-right: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.2);
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.training-schedule-nav a:hover {
+  background: rgba(255, 255, 255, 0.42);
+  transform: translateY(-6px);
+}
+
+.training-schedule-nav a.is-active {
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.training-schedule-nav a:last-child {
+  border-right: 0;
+}
+
+.training-schedule-nav strong {
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.training-schedule-nav small {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.schedule-poster {
+  margin: 0;
+}
+
+.schedule-poster-stack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+  margin-top: clamp(30px, 5vw, 64px);
+}
+
+.training-page > .schedule-poster {
+  max-width: 260px;
+  margin-top: clamp(30px, 5vw, 64px);
+}
+
+.schedule-poster img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--line);
+  background: white;
+  box-shadow: 0 18px 48px rgba(31, 33, 29, 0.12);
+  cursor: zoom-in;
+  object-fit: cover;
+  object-position: top center;
+  transition:
+    filter 160ms ease,
+    transform 160ms ease;
+}
+
+.schedule-poster img:hover {
+  filter: brightness(1.04);
+  transform: translateY(-4px);
 }
 
 .section-heading {
@@ -853,6 +946,48 @@ h2 {
 .artwork-grid .project-card img {
   aspect-ratio: 4 / 3;
   cursor: zoom-in;
+  object-fit: contain;
+}
+
+.animation-card video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #0e1412;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  object-fit: contain;
+}
+
+.animation-cover-link {
+  display: block;
+}
+
+.animation-card .animation-cover-link img {
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  object-fit: cover;
+  transition:
+    filter 160ms ease,
+    transform 160ms ease;
+}
+
+.animation-card .animation-cover-link:hover img {
+  filter: brightness(1.04);
+  transform: translateY(-4px);
+}
+
+.animation-player {
+  margin-top: clamp(28px, 5vw, 64px);
+}
+
+.animation-player video {
+  display: block;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #0e1412;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
   object-fit: contain;
 }
 
@@ -1235,12 +1370,15 @@ h2 {
 
   .service-grid,
   .training-list,
+  .training-schedule-nav,
+  .schedule-poster-stack,
   .timeline {
     grid-template-columns: 1fr;
   }
 
   .service-grid article,
   .training-list a,
+  .training-schedule-nav a,
   .timeline li {
     min-height: auto;
     border-right: 0;
@@ -1248,6 +1386,10 @@ h2 {
   }
 
   .training-list a {
+    min-height: 150px;
+  }
+
+  .training-schedule-nav a {
     min-height: 150px;
   }
 

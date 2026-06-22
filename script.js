@@ -49,7 +49,7 @@ if (document.body.classList.contains("home-page")) {
   });
 }
 
-const artworkImages = document.querySelectorAll(".works-gallery .project-card img");
+const artworkImages = document.querySelectorAll(".works-gallery .project-card img, .schedule-poster img");
 
 if (artworkImages.length) {
   const lightbox = document.createElement("div");
