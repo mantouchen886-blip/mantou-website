@@ -962,7 +962,10 @@ h2 {
   display: block;
 }
 
-.animation-card .animation-cover-link img {
+.animation-card .animation-cover-link img,
+.animation-card .animation-cover-link video {
+  display: block;
+  width: 100%;
   aspect-ratio: 16 / 9;
   cursor: pointer;
   object-fit: cover;
@@ -971,7 +974,8 @@ h2 {
     transform 160ms ease;
 }
 
-.animation-card .animation-cover-link:hover img {
+.animation-card .animation-cover-link:hover img,
+.animation-card .animation-cover-link:hover video {
   filter: brightness(1.04);
   transform: translateY(-4px);
 }
